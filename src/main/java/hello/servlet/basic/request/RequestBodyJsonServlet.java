@@ -16,8 +16,13 @@ import java.nio.charset.StandardCharsets;
 @WebServlet(name = "requestBodyJsonServlet", urlPatterns = "/request-body-json")
 public class RequestBodyJsonServlet extends HttpServlet {
 
-    //jackson이라는 json라이브러리 사용
+    /*
+    json결과를 파싱해서 사용할 수 있는 자바 객체로 변화하려면
+    Jackson, Gson과 같은 JSON 변환 라이브러리를 사용해야 한다.
+    밑에서는 Jackson 라이브러리(ObjectMapper)를 사용하였음.
+    */
     private ObjectMapper objectMapper = new ObjectMapper();
+
     
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
